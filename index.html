@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assest/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="site-header">
+  <div class="container">
+<div class="logo">
+  <a href="/" class="logo-link" aria-label="ClearPath FinServices Home">
+    <svg class="logo-svg" width="220" height="48" viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="22" fill="#162e51"/>
+      <path d="M18 30 L30 24 L18 18 Z" fill="#ffbe2e"/>
+      <text x="60" y="30"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="20"
+            font-weight="700"
+            fill="#162e51">
+        ClearPath
+      </text>
+      <text x="60" y="44"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12"
+            font-weight="600"
+            fill="#162e51">
+        FinServices
+      </text>
+    </svg>
+  </a>
+</div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#services" class="drop-btn">
+          Services <span class="arrow">▾</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="anttrony.html">Attorney Services</a>
+          <a href="booking.html">Bookkeeping</a>
+          <a href="tax.html">Tax & Compliance</a>
+        </div>
+      </div>
+      <a href="#about">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-search mobile-search">
+  <div class="search-box">
+    <svg class="search-icon" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input
+      type="text"
+      id="searchInputMobile"
+      placeholder="Search services..."
+      autocomplete="off"
+    >
+    <div class="search-results" id="searchResultsMobile"></div>
+  </div>
+</div>
+    </nav>
+   <div class="nav-search desktop-search">
+  <div class="search-box">
+    <svg class="search-icon" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search services..."
+      autocomplete="off"
+    >
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+    <a href="contact.html" class="btn-primary">Book Consultation</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-slider" id="heroSlider">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide active">
+      <div class="hero-content">
+        <div class="hero-text">
+  <span class="hero-tag">Legal Services</span>
+  <h1>Trusted Attorney Services Across the USA</h1>
+  <p class="hero-sub">
+    ClearPath FinServices delivers dependable legal guidance for individuals,
+    startups, and growing businesses—focused on compliance, clarity, and long-term protection.
+  </p>
+  <ul class="hero-points">
+    <li>Business formation, contracts & legal advisory</li>
+    <li>Federal & state compliance support</li>
+    <li>Risk assessment & documentation review</li>
+    <li>Confidential handling of sensitive matters</li>
+  </ul>
+  <div class="hero-actions">
+    <a href="contact.html" class="hero-btn">Schedule Consultation</a>
+    <a href="anttrony.html" class="hero-link">View Legal Services</a>
+  </div>
+</div>
+        <div class="hero-image">
+          <img src="images/shutterstock_2276096089.jpg" alt="Attorney Services">
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-content">
+<div class="hero-text">
+  <span class="hero-tag">Accounting Services</span>
+  <h1>Professional Bookkeeping You Can Rely On</h1>
+  <p class="hero-sub">
+    Accurate, CPA-aligned bookkeeping services designed to give you
+    clear financial visibility and stress-free compliance.
+  </p>
+  <ul class="hero-points">
+    <li>Monthly, quarterly & annual bookkeeping</li>
+    <li>Expense categorization & reconciliation</li>
+    <li>Cash-flow & financial health tracking</li>
+    <li>Secure digital record management</li>
+  </ul>
+  <div class="hero-actions">
+    <a href="contact.html" class="hero-btn">Start Bookkeeping</a>
+    <a href="booking.html" class="hero-link">Explore Accounting</a>
+  </div>
+</div>
+        <div class="hero-image">
+          <img src="images/OIP.webp" alt="Bookkeeping Services">
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+  <span class="hero-tag">Tax & Compliance</span>
+  <h1>IRS-Compliant Tax Filing & Planning</h1>
+  <p class="hero-sub">
+    End-to-end tax services designed to keep you compliant,
+    minimize risk, and optimize savings under US tax regulations.
+  </p>
+  <ul class="hero-points">
+    <li>Federal & state tax filing</li>
+    <li>IRS notices & audit assistance</li>
+    <li>Strategic tax planning & deductions</li>
+    <li>Year-round compliance support</li>
+  </ul>
+  <div class="hero-actions">
+    <a href="contact.html" class="hero-btn">File Taxes Now</a>
+    <a href="tax.html" class="hero-link">View Tax Services</a>
+  </div>
+</div>
+        <div class="hero-image">
+          <img src="images/360_F_562636593_8BHqCBQIIU5V45Ob6mpHdi32RKqZRWwx.jpg" alt="Tax Services">
+        </div>
+      </div>
+    </div>
+<div class="hero-progress">
+  <span class="progress-bar"></span>
+</div>
+    <div class="hero-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
+  </div>
+</section>
+<section class="trust-bar" id="trustBar">
+  <div class="trust-container">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" class="trust-icon">
+        <path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4z"/>
+      </svg>
+      <span>USA-Based Services</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" class="trust-icon">
+        <path d="M4 4h16v16H4zM8 8h8v8H8z"/>
+      </svg>
+      <span>CPA-Aligned Accounting</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" class="trust-icon">
+        <path d="M3 4h18v4H3zm0 6h18v10H3z"/>
+      </svg>
+      <span>IRS-Compliant Tax Filing</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" class="trust-icon">
+        <path d="M12 2a5 5 0 015 5v3h1a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8a2 2 0 012-2h1V7a5 5 0 015-5z"/>
+      </svg>
+      <span>Secure & Confidential</span>
+    </div>
+  </div>
+</section>
+<section class="services premium-services">
+  <div class="services-container">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Our Core Services</h2>
+    <p class="section-subtitle">
+      Reliable legal, accounting, and tax solutions tailored for
+      US individuals, startups, and growing businesses.
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚖️</div>
+        <h3>Attorney Services</h3>
+        <p>
+          Strategic legal support for business formation, contracts,
+          compliance, and risk management.
+        </p>
+        <ul class="service-points">
+          <li>Business & legal advisory</li>
+          <li>Federal & state compliance</li>
+          <li>Confidential consultations</li>
+        </ul>
+        <a href="anttrony.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card featured">
+        <div class="service-icon">📊</div>
+        <h3>Bookkeeping</h3>
+        <p>
+          Accurate, CPA-aligned bookkeeping to keep your finances
+          organized, transparent, and audit-ready.
+        </p>
+        <ul class="service-points">
+          <li>Monthly & yearly reports</li>
+          <li>Expense & cash-flow tracking</li>
+          <li>Secure digital records</li>
+        </ul>
+        <a href="booking.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧾</div>
+        <h3>Tax Services</h3>
+        <p>
+          End-to-end IRS-compliant tax filing, planning,
+          and audit support for peace of mind.
+        </p>
+        <ul class="service-points">
+          <li>Federal & state tax filing</li>
+          <li>IRS notices & audits</li>
+          <li>Smart tax planning</li>
+        </ul>
+        <a href="tax.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="action-center premium-action" aria-labelledby="actionCenterTitle">
+  <div class="action-container">
+
+    <span class="section-tag">Quick Access</span>
+    <h2 class="section-title" id="actionCenterTitle">Action Center</h2>
+    <p class="section-subtitle">
+      Secure access to essential public services and justice resources.
+    </p>
+
+    <div class="action-grid" role="list">
+
+      <a href="#" class="action-card priority"
+         role="listitem"
+         tabindex="0"
+         aria-label="Report a crime or submit a complaint">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2L2 7v6c0 5 4 9 10 11 6-2 10-6 10-11V7z"/>
+          </svg>
+        </div>
+        <span>Report a Crime or Submit a Complaint</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/>
+          </svg>
+        </div>
+        <span>Report and Identify Missing Persons</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l4 8h6l-5 4 2 8-7-5-7 5 2-8-5-4h6z"/>
+          </svg>
+        </div>
+        <span>Victim Assistance & Support</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 4h18v16H3z"/>
+          </svg>
+        </div>
+        <span>Permits, Registration & Records</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 3h16v18H4z"/>
+          </svg>
+        </div>
+        <span>Prison & Inmate Locator</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V7z"/>
+          </svg>
+        </div>
+        <span>Careers at DOJ</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l2 5h5l-4 3 2 6-5-4-5 4 2-6-4-3h5z"/>
+          </svg>
+        </div>
+        <span>Most Wanted Fugitives</span>
+      </a>
+
+      <a href="#" class="action-card" role="listitem" tabindex="0">
+        <div class="action-icon-circle">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2h12v20H6z"/>
+          </svg>
+        </div>
+        <span>Contact DOJ</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>Get Expert Legal, Accounting & Tax Support Today</h2>
+  <p>
+    Schedule a consultation and let ClearPath FinServices
+    handle your compliance with confidence.
+  </p>
+  <a href="contact.html" class="hero-btn">Book a Consultation</a>
+</section>
+<section class="contact-faq">
+  <div class="contact-faq-container">
+    <div class="contact-box">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-title">Request a Consultation</h2>
+      <p class="section-subtitle">
+        Share your details and we’ll get back to you shortly.
+      </p>
+      <form id="contactForm" novalidate>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <small class="error-msg" id="emailError"></small>
+        <input type="tel" placeholder="Phone Number">
+        <select required>
+          <option value="">Select Service</option>
+          <option>Attorney Services</option>
+          <option>Bookkeeping</option>
+          <option>Tax Services</option>
+        </select>
+        <textarea rows="4" placeholder="Briefly describe your requirement"></textarea>
+        <button type="submit" class="hero-btn">Submit Request</button>
+      </form>
+    </div>
+    <div class="faq-box">
+  <span class="section-tag">FAQs</span>
+  <h2 class="section-title">Common Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Do you provide services across all US states?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Yes. ClearPath FinServices works with clients across all 50 U.S. states.
+      Our legal, bookkeeping, and tax solutions are designed to meet both
+      federal requirements and state-specific regulations.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What types of clients do you typically work with?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      We serve individuals, startups, and small to mid-size businesses.
+      Whether you need personal tax support, business compliance, or
+      ongoing financial management, our services scale to your needs.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Are your accounting and tax services IRS and CPA compliant?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Absolutely. All bookkeeping and tax services follow current IRS
+      regulations and are aligned with CPA-accepted accounting standards
+      to ensure accuracy, compliance, and audit readiness.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How do you ensure confidentiality and data security?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Client confidentiality is a top priority. We use secure systems,
+      controlled access, and strict internal policies to protect sensitive
+      legal, financial, and personal information at every stage.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What happens after I submit a consultation request?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Once your request is submitted, our team reviews your details and
+      contacts you within one business day to discuss your requirements
+      and outline the next steps.
+    </div>
+  </div>
+
+</div>
+
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+        <a href="/" class="footer-logo-link" aria-label="ClearPath FinServices Home">
+    <svg class="footer-logo-svg" width="220" height="48" viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="22" fill="#ffbe2e"/>
+      <path d="M18 30 L30 24 L18 18 Z" fill="#162e51"/>
+      <text x="60" y="30"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="20"
+            font-weight="700"
+            fill="#ffffff">
+        ClearPath
+      </text>
+      <text x="60" y="44"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12"
+            font-weight="600"
+            fill="#ffffff">
+        FinServices
+      </text>
+    </svg>
+  </a>
+      <p class="footer-text">
+        Providing trusted legal, accounting, and tax solutions
+        for individuals and businesses across the United States.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="anttrony.html">Attorney Services</a></li>
+        <li><a href="booking.html">Bookkeeping</a></li>
+        <li><a href="tax.html">Tax Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+        <li><a href="refund-policy.html">Refund Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>📍 United States</li>
+        <li>📧 support@clearpathfinservices.com</li>
+        <li>📞 +1 (XXX) XXX-XXXX</li>
+      </ul>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Facebook">f</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 ClearPath FinServices. All rights reserved.
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

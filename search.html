@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results | ClearPath FinServices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="assest/style.css">
+  <!-- SEO Schema -->
+  <script type="application/ld+json" id="schema"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Inter, Arial, sans-serif; }
+    body { background: #f6f8fb; color: #162e51; }
+    .page-header {
+      background: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 6px 18px rgba(22,46,81,.15);
+    }
+    .page-header h1 { font-size: 26px; }
+    .search-bar {
+      max-width: 1100px;
+      margin: 30px auto 10px;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .search-box { position: relative; flex: 1; max-width: 420px; }
+    .search-box input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      border-radius: 30px;
+      border: 1px solid #162e51;
+      font-size: 14px;
+    }
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      stroke: #162e51;
+      fill: none;
+      stroke-width: 2;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #162e51;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .filter-btn.active {
+      background: #ffbe2e;
+      border-color: #ffbe2e;
+    }
+    .results-info {
+      max-width: 1100px;
+      margin: 10px auto;
+      padding: 0 24px;
+      font-size: 14px;
+    }
+    .results {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+      gap: 26px;
+    }
+    .card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(22,46,81,.1);
+      border-top: 4px solid #ffbe2e;
+    }
+    .card .category {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card h3 { font-size: 18px; margin-bottom: 10px; }
+    .card p { font-size: 14px; color: #555; margin-bottom: 14px; }
+    .card a {
+      font-weight: 600;
+      color: #162e51;
+      text-decoration: none;
+      border-bottom: 2px solid #ffbe2e;
+    }
+    mark {
+      background: #ffbe2e;
+      color: #162e51;
+      padding: 0 2px;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 40px 0 60px;
+    }
+    .page-btn {
+      padding: 8px 14px;
+      border: 1px solid #162e51;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .page-btn.active {
+      background: #162e51;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="page-header">
+    <h1>Search Results</h1>
+  </div>
+  <!-- SEARCH + FILTERS -->
+  <div class="search-bar">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input id="searchInput" placeholder="Search services...">
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" data-cat="All">All</button>
+      <button class="filter-btn" data-cat="Legal">Legal</button>
+      <button class="filter-btn" data-cat="Accounting">Accounting</button>
+      <button class="filter-btn" data-cat="Tax">Tax</button>
+    </div>
+  </div>
+  <div class="results-info" id="info"></div>
+  <div class="results" id="results"></div>
+  <div class="pagination" id="pagination"></div>
+  <script>
+const DATA = [
+  { title:"Attorney Services", cat:"Legal", desc:"Professional legal consultation and compliance support for US businesses.", link:"anttrony.html" },
+  { title:"Legal Consultation", cat:"Legal", desc:"Business law, contracts, and regulatory guidance.", link:"anttrony.html" },
+  { title:"Bookkeeping Services", cat:"Accounting", desc:"Accurate bookkeeping aligned with US accounting standards.", link:"booking.html" },
+  { title:"Financial Reporting", cat:"Accounting", desc:"Monthly and annual reports for US businesses.", link:"booking.html" },
+  { title:"Tax Services", cat:"Tax", desc:"IRS-compliant tax filing and planning.", link:"tax.html" },
+  { title:"IRS Compliance", cat:"Tax", desc:"Audit support and federal tax compliance.", link:"tax.html" }
+];
+const perPage = 4;
+let state = { q:"", cat:"All", page:1 };
+const input = document.getElementById("searchInput");
+const results = document.getElementById("results");
+const info = document.getElementById("info");
+const pagination = document.getElementById("pagination");
+function highlight(text, q){
+  if(!q) return text;
+  return text.replace(new RegExp(q,"gi"), m=>`<mark>${m}</mark>`);
+}
+function render(){
+  let filtered = DATA.filter(d =>
+    (state.cat==="All" || d.cat===state.cat) &&
+    (d.title.toLowerCase().includes(state.q) || d.desc.toLowerCase().includes(state.q))
+  );
+  info.textContent = `${filtered.length} result(s) found`;
+  const start = (state.page-1)*perPage;
+  const pageData = filtered.slice(start,start+perPage);
+  results.innerHTML = pageData.map(d=>`
+    <div class="card">
+      <div class="category">${d.cat}</div>
+      <h3>${highlight(d.title,state.q)}</h3>
+      <p>${highlight(d.desc,state.q)}</p>
+      <a href="${d.link}">View Service →</a>
+    </div>
+  `).join("");
+  pagination.innerHTML = "";
+  for(let i=1;i<=Math.ceil(filtered.length/perPage);i++){
+    pagination.innerHTML += `<div class="page-btn ${i===state.page?'active':''}" onclick="go(${i})">${i}</div>`;
+  }
+  // SEO schema
+  document.getElementById("schema").textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement": filtered.map((d,i)=>({
+      "@type":"ListItem","position":i+1,"name":d.title,"url":d.link
+    }))
+  });
+}
+function go(p){ state.page=p; render(); }
+input.addEventListener("input",e=>{
+  state.q=e.target.value.toLowerCase();
+  state.page=1;
+  render();
+});
+document.querySelectorAll(".filter-btn").forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll(".filter-btn").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    state.cat=b.dataset.cat;
+    state.page=1;
+    render();
+  }
+});
+render();
+</script>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+        <a href="/" class="footer-logo-link" aria-label="ClearPath FinServices Home">
+    <svg class="footer-logo-svg" width="220" height="48" viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="22" fill="#ffbe2e"/>
+      <path d="M18 30 L30 24 L18 18 Z" fill="#162e51"/>
+      <text x="60" y="30"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="20"
+            font-weight="700"
+            fill="#ffffff">
+        ClearPath
+      </text>
+      <text x="60" y="44"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12"
+            font-weight="600"
+            fill="#ffffff">
+        FinServices
+      </text>
+    </svg>
+  </a>
+      <p class="footer-text">
+        Providing trusted legal, accounting, and tax solutions
+        for individuals and businesses across the United States.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="anttrony.html">Attorney Services</a></li>
+        <li><a href="booking.html">Bookkeeping</a></li>
+        <li><a href="tax.html">Tax Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+        <li><a href="refund-policy.html">Refund Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>📍 United States</li>
+        <li>📧 support@clearpathfinservices.com</li>
+        <li>📞 +1 (XXX) XXX-XXXX</li>
+      </ul>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Facebook">f</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 ClearPath FinServices. All rights reserved.
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
