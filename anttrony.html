@@ -36,7 +36,7 @@
     <nav class="nav-menu" id="navMenu">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#services" class="drop-btn">
+        <a href="service.html" class="drop-btn">
           Services <span class="arrow">▾</span>
         </a>
         <div class="dropdown-menu">
@@ -45,7 +45,7 @@
           <a href="tax.html">Tax & Compliance</a>
         </div>
       </div>
-      <a href="#about">About Us</a>
+      <a href="about.html">About Us</a>
       <a href="contact.html">Contact</a>
       <div class="nav-search mobile-search">
   <div class="search-box">
@@ -114,7 +114,7 @@
 
       <div class="tax-hero-actions">
         <a href="contact.html" class="hero-btn">Book a Consultation</a>
-        <a href="#overview" class="hero-link">How Our Legal Services Work</a>
+       
       </div>
     </div>
 
@@ -238,98 +238,84 @@
   </p>
   <a href="contact.html" class="hero-btn">Book a Consultation</a>
 </section>
-<section class="contact-faq">
-  <div class="contact-faq-container">
-    <div class="contact-box">
-      <span class="section-tag">Get in Touch</span>
-      <h2 class="section-title">Request a Consultation</h2>
-      <p class="section-subtitle">
-        Share your details and we’ll get back to you shortly.
-      </p>
-      <form id="contactForm" novalidate>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email Address" required>
-        <small class="error-msg" id="emailError"></small>
-        <input type="tel" placeholder="Phone Number">
-        <select required>
-          <option value="">Select Service</option>
-          <option>Attorney Services</option>
-          <option>Bookkeeping</option>
-          <option>Tax Services</option>
-        </select>
-        <textarea rows="4" placeholder="Briefly describe your requirement"></textarea>
-        <button type="submit" class="hero-btn">Submit Request</button>
-      </form>
-    </div>
-    <div class="faq-box">
-  <span class="section-tag">FAQs</span>
-  <h2 class="section-title">Common Questions</h2>
+<section class="service-faq">
+<style>
+.service-faq{padding:90px 24px;background:#f7f9fc}
+.service-faq-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.service-faq h2{font-size:34px;color:#162e51;margin-bottom:30px}
+.faq-item{position:relative;background:#fff;border-radius:14px;margin-bottom:14px;box-shadow:0 14px 30px rgba(22,46,81,.12);overflow:hidden}
+.faq-item::before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:#ffbe2e;opacity:0;transition:.3s}
+.faq-item.active::before{opacity:1}
+.faq-question{width:100%;background:none;border:none;padding:5px 22px;font-size:16px;font-weight:700;color:#162e51;display:flex;justify-content:space-between;cursor:pointer}
+.faq-question span{font-size:22px;transition:.3s}
+.faq-item.active .faq-question span{transform:rotate(45deg)}
+.faq-answer{display:none;padding:0 14px 20px;font-size:14px;line-height:1.7;color:#444}
+.faq-item.active .faq-answer{display:block}
+.faq-image img{width:100%;border-radius:22px;box-shadow:0 30px 60px rgba(22,46,81,.25)}
+@media(max-width:900px){.service-faq-container{grid-template-columns:1fr}}
+</style>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">
-      Do you provide services across all US states?
-      <span>+</span>
-    </button>
-    <div class="faq-answer">
-      Yes. ClearPath FinServices works with clients across all 50 U.S. states.
-      Our legal, bookkeeping, and tax solutions are designed to meet both
-      federal requirements and state-specific regulations.
-    </div>
-  </div>
+<div class="service-faq-container">
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">
-      What types of clients do you typically work with?
-      <span>+</span>
-    </button>
-    <div class="faq-answer">
-      We serve individuals, startups, and small to mid-size businesses.
-      Whether you need personal tax support, business compliance, or
-      ongoing financial management, our services scale to your needs.
-    </div>
-  </div>
+<div>
+<h2>Legal Services FAQs</h2>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">
-      Are your accounting and tax services IRS and CPA compliant?
-      <span>+</span>
-    </button>
-    <div class="faq-answer">
-      Absolutely. All bookkeeping and tax services follow current IRS
-      regulations and are aligned with CPA-accepted accounting standards
-      to ensure accuracy, compliance, and audit readiness.
-    </div>
-  </div>
+<div class="faq-item">
+<button class="faq-question">What legal services do you offer?<span>+</span></button>
+<div class="faq-answer">
+We provide legal consultation, business compliance support,
+documentation review, and advisory services for individuals and businesses.
+</div>
+</div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">
-      How do you ensure confidentiality and data security?
-      <span>+</span>
-    </button>
-    <div class="faq-answer">
-      Client confidentiality is a top priority. We use secure systems,
-      controlled access, and strict internal policies to protect sensitive
-      legal, financial, and personal information at every stage.
-    </div>
-  </div>
+<div class="faq-item">
+<button class="faq-question">Do you assist startups and small businesses?<span>+</span></button>
+<div class="faq-answer">
+Yes. We support startups and small businesses with legal structuring,
+contracts, compliance, and ongoing advisory services.
+</div>
+</div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">
-      What happens after I submit a consultation request?
-      <span>+</span>
-    </button>
-    <div class="faq-answer">
-      Once your request is submitted, our team reviews your details and
-      contacts you within one business day to discuss your requirements
-      and outline the next steps.
-    </div>
-  </div>
+<div class="faq-item">
+<button class="faq-question">Are your services compliant with US laws?<span>+</span></button>
+<div class="faq-answer">
+All services follow applicable federal and state regulations
+to ensure lawful operations and risk mitigation.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">Is my legal information confidential?<span>+</span></button>
+<div class="faq-answer">
+Absolutely. Confidentiality is a top priority, and all client
+information is handled with strict privacy controls.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">What happens after I request a consultation?<span>+</span></button>
+<div class="faq-answer">
+Our team reviews your request and contacts you within one business day
+to discuss your legal needs and next steps.
+</div>
+</div>
 
 </div>
 
-    </div>
-  </div>
+<div class="faq-image">
+<img src="images/attornyfaq.jpg" alt="Professional Legal Services">
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(b=>{
+b.onclick=()=>{const i=b.parentElement;
+document.querySelectorAll(".faq-item").forEach(x=>x!==i&&x.classList.remove("active"));
+i.classList.toggle("active")}})
+</script>
 </section>
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-col">
@@ -393,6 +379,6 @@
     © 2026 ClearPath FinServices. All rights reserved.
   </div>
 </footer>
-<script src="script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>

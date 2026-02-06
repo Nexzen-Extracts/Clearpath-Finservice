@@ -170,48 +170,61 @@ startAutoSlide();
 /* ================= TRUST BAR ================= */
 const heroSection = document.querySelector(".hero");
 const trustBarEl = document.getElementById("trustBar");
-/* Sticky trust bar after hero */
-const heroObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        trustBarEl.classList.add("sticky-show");
-      } else {
-        trustBarEl.classList.remove("sticky-show");
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-heroObserver.observe(heroSection);
+
+if (heroSection && trustBarEl) {
+  const heroObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          trustBarEl.classList.add("sticky-show");
+        } else {
+          trustBarEl.classList.remove("sticky-show");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  heroObserver.observe(heroSection);
+}
+
 window.addEventListener("resize", () => {
   slideTime = getSlideTime();
   startAutoSlide();
 });
-/* ================= FAQ ACCORDION ================= */
+/* FAQ ACCORDION */
 document.querySelectorAll(".faq-question").forEach(btn => {
   btn.addEventListener("click", () => {
-    const item = btn.parentElement;
+    const item = btn.closest(".faq-item");
     item.classList.toggle("active");
   });
 });
-/* ================= EMAIL VALIDATION ================= */
+
+/* FORM VALIDATION */
 const form = document.getElementById("contactForm");
 const emailInput = document.getElementById("email");
 const emailError = document.getElementById("emailError");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const emailValue = emailInput.value.trim();
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(emailValue)) {
-    emailError.textContent = "Please enter a valid email address.";
-    emailInput.style.borderColor = "#c0392b";
-    return;
-  }
-  emailError.textContent = "";
-  emailInput.style.borderColor = "#ddd";
-  alert("Form submitted successfully!");
-  form.reset();
-});
+const successBox = document.getElementById("formSuccess");
+
+if (form && emailInput && emailError) {
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const emailValue = emailInput.value.trim();
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!pattern.test(emailValue)) {
+      emailError.textContent = "Please enter a valid email address.";
+      return;
+    }
+
+    emailError.textContent = "";
+    form.style.display = "none";
+    successBox.style.display = "block";
+  });
+}
+
+
+
 
 

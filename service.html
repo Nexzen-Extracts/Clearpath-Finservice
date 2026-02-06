@@ -86,119 +86,153 @@
 </header>
 
 
+<section class="services-hero">
+  <div class="services-hero-container">
 
+    <!-- LEFT CONTENT -->
+    <div class="services-hero-text">
+      <span class="section-tag">Our Services</span>
 
-</head>
+      <h1>
+        Professional Legal, Accounting<br>
+        & Tax Services You Can Trust
+      </h1>
 
-<body>
+      <p class="services-hero-sub">
+        ClearPath FinServices delivers integrated solutions designed
+        to help individuals and businesses stay compliant, organized,
+        and confident at every stage of growth.
+      </p>
 
-<section class="contact-page">
-  <div class="contact-container">
+      <ul class="services-hero-points">
+        <li>Attorney & legal compliance support</li>
+        <li>Accurate bookkeeping & financial reporting</li>
+        <li>IRS-compliant tax filing & planning</li>
+        <li>Secure, confidential service delivery</li>
+      </ul>
 
-    <!-- LEFT -->
-    <div>
-      <div class="contact-visual">
-        <img src="images/contact.jpg" alt="ClearPath FinServices Office">
-      </div>
-
-      <div class="office-info" style="text-align:center;">
-        <h3 >Our Office</h3>
-        <p>
-          ClearPath FinServices/
-          United States<br>
-          
-        </p>
-      </div>
-
-      <div class="map-box">
-        <iframe
-          src="https://www.google.com/maps?q=United%20States&output=embed"
-          loading="lazy">
-        </iframe>
+      <div class="services-hero-actions">
+        <a href="contact.html" class="hero-btn">Book a Consultation</a>
+       
       </div>
     </div>
 
-    <!-- RIGHT -->
-    <div class="contact-form" id="formBox">
-      <h2>Request a Consultation</h2>
-      <p>
-        Share your details and our team will contact you
-        within one business day.
-      </p>
-
-      <form id="contactForm" novalidate>
-
-        <input type="text" placeholder="Full Name" required>
-
-        <input type="email" id="email" placeholder="Email Address" required>
-        <div class="error" id="emailError"></div>
-
-        <input type="tel" placeholder="Phone Number">
-
-        <select required>
-          <option value="">Select Service</option>
-          <option>Attorney Services</option>
-          <option>Bookkeeping</option>
-          <option>Tax Services</option>
-        </select>
-
-        <textarea rows="4" placeholder="Briefly describe your requirement"></textarea>
-
-        <!-- CAPTCHA (UI) -->
-        <div class="captcha-box">
-          <input type="checkbox" id="captcha">
-          <span>I’m not a robot</span>
-        </div>
-
-        <button type="submit">Submit Request</button>
-      </form>
-    </div>
-
-    <!-- SUCCESS -->
-    <div class="contact-form success-message" id="successBox">
-      <h3>Thank You</h3>
-      <p>
-        Your request has been successfully submitted.
-        Our team will reach out shortly.
-      </p>
+    <!-- RIGHT IMAGE -->
+    <div class="services-hero-image">
+      <img
+        src="images/services2.jpg"
+        alt="Professional Legal Accounting and Tax Services">
     </div>
 
   </div>
 </section>
 
-<script>
-const form = document.getElementById("contactForm");
-const email = document.getElementById("email");
-const emailError = document.getElementById("emailError");
-const captcha = document.getElementById("captcha");
-const formBox = document.getElementById("formBox");
-const successBox = document.getElementById("successBox");
+<section class="services-overview" id="services-list">
+  <div class="services-overview-container">
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Our Core Services</h2>
+    <p class="section-subtitle">
+      Comprehensive legal, accounting, and tax solutions designed
+      to support individuals and businesses across the United States.
+    </p>
 
-  const emailValue = email.value.trim();
-  const pattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    <div class="services-cards">
 
-  if (!pattern.test(emailValue)) {
-    emailError.textContent = "Please enter a valid email address.";
-    return;
-  }
+      <!-- CARD 1 -->
+      <div class="service-card">
+        <div class="service-icon">⚖️</div>
+        <h3>Attorney Services</h3>
+        <p>
+          Reliable legal support for business formation, contracts,
+          compliance, and ongoing advisory needs.
+        </p>
+        <ul>
+          <li>Business setup & legal documentation</li>
+          <li>Federal & state compliance</li>
+          <li>Risk review & advisory</li>
+        </ul>
+        <a href="anttrony.html" class="service-link">Learn More →</a>
+      </div>
 
-  if (!captcha.checked) {
-    alert("Please verify that you are not a robot.");
-    return;
-  }
+      <!-- CARD 2 -->
+      <div class="service-card featured">
+        <div class="service-icon">📊</div>
+        <h3>Bookkeeping Services</h3>
+        <p>
+          Accurate, organized financial records that provide clarity,
+          support decision-making, and ensure compliance.
+        </p>
+        <ul>
+          <li>Monthly & annual bookkeeping</li>
+          <li>Financial reporting</li>
+          <li>Account reconciliation</li>
+        </ul>
+        <a href="booking.html" class="service-link">Learn More →</a>
+      </div>
 
-  emailError.textContent = "";
-  formBox.style.display = "none";
-  successBox.style.display = "block";
-});
-</script>
+      <!-- CARD 3 -->
+      <div class="service-card">
+        <div class="service-icon">🧾</div>
+        <h3>Tax & Compliance</h3>
+        <p>
+          End-to-end tax filing, planning, and IRS support to keep
+          you compliant and confident year-round.
+        </p>
+        <ul>
+          <li>Federal & state tax filing</li>
+          <li>IRS notices & audit support</li>
+          <li>Strategic tax planning</li>
+        </ul>
+        <a href="tax.html" class="service-link">Learn More →</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
+<section class="process-section">
+  <div class="process-container">
 
+    <span class="section-tag">How It Works</span>
+    <h2 class="section-title">Our Simple, Secure Process</h2>
+    <p class="section-subtitle">
+      A structured approach that ensures compliance, clarity,
+      and long-term confidence.
+    </p>
 
+    <div class="process-flow curved-flow">
+
+      <div class="process-step">
+        <div class="process-circle">1</div>
+        <h3>Consultation</h3>
+        <p>We understand your goals, requirements, and compliance needs.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-circle">2</div>
+        <h3>Assessment</h3>
+        <p>Detailed review of documents, risks, and opportunities.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-circle">3</div>
+        <h3>Execution</h3>
+        <p>Preparation, filing, and compliance-aligned execution.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-circle">4</div>
+        <h3>Ongoing Support</h3>
+        <p>Continuous guidance and expert assistance year-round.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-container">
@@ -266,17 +300,3 @@ form.addEventListener("submit", function(e) {
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
